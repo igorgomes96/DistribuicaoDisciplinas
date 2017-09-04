@@ -1,0 +1,48 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}} professor fila - {{fila.ano}} / {{fila.semestre}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form=""  novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Ano *</label>
+	                <div class="input-group">   
+    					<input 
+    						type="number"
+    						ng-model="fila.ano"
+    						ng-required="true"
+    						name="ano"
+    						class="form-control">
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.ano.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Semestre *</label>
+	                <div class="input-group">   
+    					<input 
+    						type="number"
+    						min="1"
+    						max="2"
+    						scale="1"
+    						ng-model="fila.semestre"
+    						ng-required="true"
+    						name="semestre"
+    						class="form-control">
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.semestre.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-success" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

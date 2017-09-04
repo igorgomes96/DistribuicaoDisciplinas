@@ -1,0 +1,62 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form="" novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Código *</label>
+	                <div class="input-group">               
+	                    <input type="text"
+	                    	id="codigo" 
+	                    	placeholder="Código" 
+	                    	name="codigo" 
+	                    	class="form-control toUppercase" 
+	                    	ng-model="curso.codigo" 
+	                    	ng-required="true"
+	                    	ng-disabled="disableCodigo" 
+	                    	maxlength="10"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.codigo.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Nome *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="nome" placeholder="Nome" name="nome" class="form-control" ng-model="curso.nome" ng-required="true" maxlength="100"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.nome.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Unidade *</label>
+	                <div class="input-group">               
+	                    <input 
+	                    	type="text"
+	                    	id="unidade"
+	                    	placeholder="Unidade"
+	                    	name="unidade"
+	                    	class="form-control toUppercase"
+	                    	ng-model="curso.unidade"
+	                    	ng-required="true"
+	                    	maxlength="5"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.unidade.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

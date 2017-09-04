@@ -1,0 +1,83 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form="" novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Código Disciplina*</label>
+	                <div class="input-group">               
+	                    <input type="text"
+	                    	id="codigoDisc" 
+	                    	placeholder="Código Disciplina" 
+	                    	name="codigoDisc" 
+	                    	class="form-control toUppercase" 
+	                    	ng-model="turma.codigoDisc" 
+	                    	ng-required="true"
+	                    	ng-disabled="disableCodigo" 
+	                    	maxlength="10"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.codigoDisc.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Turma *</label>
+	                <div class="input-group">               
+	                    <input type="text"
+	                    	id="turma" 
+	                    	placeholder="Turma" 
+	                    	name="turma" 
+	                    	class="form-control toUppercase" 
+	                    	ng-model="turma.turma" 
+	                    	ng-required="true"
+	                    	maxlength="2"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.turma.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Carga Horária *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="ch_teorica" placeholder="Carga Horária" name="ch" class="form-control" ng-model="turma.ch" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.ch.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Ano *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="ano" placeholder="Ano" name="ano" class="form-control" ng-model="turma.ano" ng-required="true" maxlength="4"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.ano.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Semestre *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="semestre" placeholder="Semestre" name="semestre" class="form-control" ng-model="turma.semestre" ng-required="true" maxlength="1"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.semestre.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

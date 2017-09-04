@@ -1,0 +1,201 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form="" novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Siape *</label>
+	                <div class="input-group">               
+	                    <input type="text"
+	                    	id="siape" 
+	                    	placeholder="siape" 
+	                    	name="siape" 
+	                    	class="form-control toUppercase" 
+	                    	ng-model="professor.siape"
+						    maxlength="8"
+						    ng-disabled="disableSiape"
+	                    	ng-required="true"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.siape.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Nome *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="nome" placeholder="Nome" name="nome" class="form-control" ng-model="professor.nome" ng-required="true" maxlength="50"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.nome.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Data ingresso *</label>
+	                <div class="input-group">               
+	                    <input 
+	                    	type="text" 
+	                    	id="dataIngresso" 
+	                    	placeholder="Data ingresso" 
+	                    	name="dataIngresso" 
+	                    	class="form-control" 
+	                    	ng-required="true" 
+	                    	ng-model="professor.dataIngresso"
+	                    	datepicker-popup="dd/MM/yyyy" />
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.dataIngresso.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Data nascimento *</label>
+	                <div class="input-group">               
+	                    <input 
+	                    	type="text" 
+	                    	id="dataNasc"
+	                    	placeholder="Data nascimento" 
+	                    	name="dataNasc" 
+	                    	class="form-control" 
+	                    	ng-required="true" 
+	                    	ng-model="professor.dataNasc"
+	                    	datepicker-popup="dd/MM/yyyy"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.dataNasc.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Regime *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="regime" placeholder="Regime" name="regime" class="form-control" maxlength="3" ng-required="true" ng-model="professor.regime"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.regime.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Carga Horaria Atual *</label>
+	                <div class="input-group">               
+	                    <input type="number" id="cargaAtual" placeholder="Carga horária atual" name="cargaAtual" ng-required="true" class="form-control" ng-model="professor.cargaAtual"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.cargaAtual.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Lotação *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="lotacao" placeholder="Lotacao" name="lotacao" maxlength="6" class="form-control" ng-required="true" ng-model="professor.lotacao"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.lotacao.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Cnome *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="cnome" placeholder="Cnome" name="cnome" class="form-control" ng-required="true" ng-model="professor.cnome"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.cnome.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Data saída</label>
+	                <div class="input-group">               
+	                    <input 
+	                    	type="text" 
+	                    	id="dataSaida"
+	                    	placeholder="Data saída" 
+	                    	name="dataSaida" 
+	                    	class="form-control" 
+	                    	ng-model="professor.dataSaida"
+	                    	datepicker-popup="dd/MM/yyyy"/>
+	                    <span class="input-group-addon">
+	                       	<span class="fa" ng-class="(form.dataSaida.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+ 			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Data exoneração</label>
+	                <div class="input-group">               
+	                    <input 
+	                    	type="text" 
+	                    	placeholder="Data exoneração" 
+	                    	name="dataExoneracao" 
+	                    	class="form-control" 
+	                    	ng-model="professor.dataExoneracao"
+	                    	datepicker-popup="dd/MM/yyyy"/>
+	                    <span class="input-group-addon">
+	                       	<span class="fa" ng-class="(form.dataExoneracao.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>  
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Data aposentadoria</label>
+	                <div class="input-group">               
+	                    <input 
+	                    	type="text" 
+	                    	placeholder="Data aposentadoria" 
+	                    	name="dataAposentadoria" 
+	                    	class="form-control" 
+	                    	ng-model="professor.dataAposentadoria"
+	                    	datepicker-popup="dd/MM/yyyy"/>
+	                    <span class="input-group-addon">
+	                       	<span class="fa" ng-class="(form.dataAposentadoria.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>    
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Status *</label>
+	                <div class="input-group">               
+						<select class="form-control" id="statusProfessor" name="statusProfessor" ng-model="professor.statusProfessor" ng-required="true">
+						    <option value="Ativo">Ativo</option>
+						    <option value="Aposentado">Aposentado</option>
+						    <option value="Exonerado">Exonerado</option>
+						    <option value="Removido">Removido</option>
+						</select> 
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.statusProfessor.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Afastado *</label>
+	                <div class="input-group">   
+	                    <input type="checkbox"  id="afastado"  name="afastado" value="true" ng-model="professor.afastado">
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

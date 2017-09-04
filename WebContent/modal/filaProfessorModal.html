@@ -1,0 +1,87 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form="" novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Código Disc. *</label>
+	                <div class="input-group">               
+	                    <input type="text"
+	                    	id="codisc" 
+	                    	placeholder="codisc" 
+	                    	name="codisc" 
+	                    	class="form-control toUppercase" 
+	                    	ng-model="professor.codigoDisc"
+						    maxlength="8"
+						    ng-disabled="disableSiape"
+	                    	ng-required="true"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.codisc.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Prioridade *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="prioridade" placeholder="Prioridade" name="prioridade" class="form-control" ng-model="professor.prioridade" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.prioridade.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Qtde Ministrada *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="qteMinistrada" placeholder="Qtde Ministrada" name="qteMinistrada" class="form-control" ng-model="professor.qteMinistrada" ng-required="true" maxlength="1"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.qteMinistrada.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Qtde Máximo *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="qteMaximo" placeholder="Qtde Máximo" name="qteMaximo" class="form-control" ng-model="professor.qteMaximo" ng-required="true" maxlength="1"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.qteMaximo.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Status *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="status" placeholder="Status" name="status" class="form-control" maxlength="3" ng-required="true" ng-model="professor.status"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.status.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Periodo Preferencial *</label>
+	                <div class="input-group">               
+	                    <input type="boolean" id="periodo" placeholder="True/False" name="periodo" ng-required="true" class="form-control" ng-model="professor.periodo" maxlength="5"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.periodo.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

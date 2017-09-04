@@ -1,0 +1,48 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">Alterar posição professor na fila</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form="" novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Posição Atual *</label>
+	                <div class="input-group">               
+	                    <input 
+	                    	type="number"
+	                    	name="posicaoAtual"
+	                    	class="form-control"
+	                    	ng-model="posicaoAtual"
+	                    	ng-required="true"
+	                    	ng-disabled="true"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.posicaoAtual.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Nova posição *</label>
+	               	<div class="input-group">               
+	                    <input 
+	                    	type="number"
+	                    	min="1"
+	                    	scale="1"
+	                    	name="posicaoNova"
+	                    	class="form-control"
+	                    	ng-model="posicaoNova"
+	                    	ng-required="true"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.posicaoNova.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

@@ -1,0 +1,85 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form="" novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Código Disciplina*</label>
+	                <div class="input-group">               
+	                    <input type="text"
+	                    	id="codigoDisc" 
+	                    	placeholder="Código Disciplina" 
+	                    	name="codigoDisc" 
+	                    	class="form-control toUppercase" 
+	                    	ng-model="turma.codigoDisc" 
+	                    	ng-required="true"
+	                    	ng-disabled="disableCodigo" 
+	                    	maxlength="10"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.codigoDisc.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Turma *</label>
+	                <div class="input-group">               
+	                    <input type="text"
+	                    	id="turma" 
+	                    	placeholder="Turma" 
+	                    	name="turma" 
+	                    	class="form-control toUppercase" 
+	                    	ng-model="turma.turma" 
+	                    	ng-required="true"
+	                    	ng-disabled="disableCodigo"
+	                    	maxlength="10"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.turma.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Dia *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="dia" placeholder="Dia" name="ch" class="form-control" ng-model="turma.ch" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.ch.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Horário Inicio *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="horario_inicio" placeholder="Horário Inicio" name="ch" class="form-control" ng-model="turma.ch" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.ch.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Horário Fim *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="horario_fim" placeholder="Horário Fim" name="ch" class="form-control" ng-model="turma.ch" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.ch.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Remover Horários</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

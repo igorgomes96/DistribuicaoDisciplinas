@@ -1,0 +1,70 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form="" novalidate="">
+		<div class="row">
+			<div class="col-md-4">
+	            <div class="form-group">
+	                <label>Professor *</label>
+	                <div class="input-group">   
+    					<input 
+    						type="text"
+    						ng-model="item.nome"
+    						ng-required="true"
+    						name="professor"
+    						typeahead="professor as professor.nome for professor in professores | filter:{nome:$viewValue} | limitTo:8"
+    						typeahead-editable="false"
+    						typeahead-select-on-exact="true"
+    						autocomplete="off"
+    						ng-disabled="disableProfessor" 
+    						typeahead-on-select="onSelectProfessor($item)"
+    						class="form-control">
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.professor.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-4">
+	        	<div class="form-group">
+	        	<label>Semestre *</label>
+					<!--<select name="semestre" ng-change="alterarSemestre(semestre)" ng-model="item.semestre" class="form-control">
+	  					<option ng-repeat="s in semestres" value="{{s}}">{{s.ano}} / {{s.semestre}} {{s.estado}}</option>
+					</select>-->
+					<select name="semestre" ng-options="s as (s.ano+' / '+s.semestre+s.estado) for s in semestres" ng-change="alterarSemestre(item.semestre); buscaTurma(item.semestre)" ng-model="item.semestre" class="form-control">
+						<!--<option ng-repeat="s in semestres" value="{{s}}">{{s.ano}} / {{s.semestre}} {{s.estado}}</option>-->
+				</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+	            <div class="form-group">
+	                <label>Turma *</label>
+	                <div class="input-group">   
+    					<input 
+    						type="text"
+    						ng-model="item.turma"
+    						ng-required="true"
+    						name="turma"
+    						typeahead="turma as (turma.nomeDisciplina+ ' - ' +turma.turma.codigoDisc+' - '+turma.turma.turma) for turma in turmas | filter:$viewValue"
+    						typeahead-editable="false"
+    						typeahead-select-on-exact="true"
+    						autocomplete="off"
+    						ng-disabled="!item.semestre"
+    						typeahead-on-select="onSelectDisciplina($item)"
+    						class="form-control">
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.turma.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="sim(item)">Atribuir</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

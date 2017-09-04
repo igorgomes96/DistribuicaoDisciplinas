@@ -1,0 +1,67 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}} professor fila - {{fila.ano}} / {{fila.semestre}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form=""  novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Professor *</label>
+	                <div class="input-group">   
+    					<input 
+    						type="text"
+    						ng-model="fila.professor"
+    						ng-required="true"
+    						name="professor"
+    						typeahead="professor as professor.nome for professor in professores | filter:{nome:$viewValue} | limitTo:8"
+    						typeahead-editable="false"
+    						autocomplete="off"
+    						typeahead-select-on-exact="true"
+    						typeahead-on-select="onSelectProfessor($item)"
+    						class="form-control">
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.professor.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Disciplina *</label>
+	                <div class="input-group">   
+    					<input 
+    						type="text"
+    						ng-model="fila.disciplina"
+    						ng-required="true"
+    						name="disciplina"
+    						typeahead="disciplina as (disciplina.codigo+' - '+disciplina.nome) for disciplina in disciplinas | filter:$viewValue | limitTo:8"
+    						typeahead-editable="false"
+    						typeahead-select-on-exact="true"
+    						autocomplete="off"
+    						typeahead-on-select="onSelectDisciplina($item)"
+    						class="form-control">
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.disciplina.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-12">
+	        	<div class="form-group">
+	                <div class="input-group">
+	                	<button ng-disabled="form.disciplina.$invalid" type="button" title="Adicionar professor na fila" ng-click="addProfessorFila()" class="btn btn-info"  style="margin-left: 15px;">
+							<i class="fa fa-user-plus" style="padding-right: 15px;"></i>Adicionar a fila
+						</button>
+						<!--
+						<button ng-disabled="form.disciplina.$invalid" type="button" title="Remover professor da fila" ng-click="removeProfessorFila()" class="btn btn-danger" style="margin-left: 15px;">
+							<i class="fa fa-user-times" style="padding-right: 15px;"></i>Remover da fila
+						</button> -->
+	                 </div>
+	             </div>
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="nao()">Fechar</button>
+</div>

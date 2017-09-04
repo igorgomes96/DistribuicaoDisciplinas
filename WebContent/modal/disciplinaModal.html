@@ -1,0 +1,145 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form="" novalidate="">
+		<div class="row">
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Código *</label>
+	                <div class="input-group">               
+	                    <input type="text"
+	                    	id="codigo" 
+	                    	placeholder="Código" 
+	                    	name="codigo" 
+	                    	class="form-control toUppercase" 
+	                    	ng-model="disciplina.codigo" 
+	                    	ng-required="true"
+	                    	ng-disabled="disableCodigo" 
+	                    	maxlength="10"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.codigo.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Nome *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="nome" placeholder="Nome" name="nome" class="form-control" ng-model="disciplina.nome" ng-required="true" maxlength="100"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.nome.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+			<!--<div class="col-md-6">
+	            <div class="form-group">
+	                <label>Curso *</label>
+	                <div class="input-group">               
+	                    <input 
+	                    	type="text"
+	                    	id="curso"
+	                    	placeholder="Código Curso"
+	                    	name="curso"
+	                    	class="form-control toUppercase"
+	                    	ng-model="disciplina.curso"
+	                    	ng-required="true"
+	                    	maxlength="50"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.curso.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div> -->
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Curso *</label>
+	                <div class="input-group">   
+    					<input 
+    						type="text"
+    						id="curso"
+    						ng-model="disciplina.curso"
+    						ng-required="true"
+    						name="curso"
+    						typeahead="curso as (curso.codigo+ ' - '+curso.nome) for curso in cursos | filter:$viewValue"
+    						typeahead-editable="false"
+    						typeahead-select-on-exact="true"
+    						autocomplete="off"
+    						typeahead-on-select="onSelectCurso(curso.codigo)"
+    						class="form-control"
+    						ng-disabled="disableCodigo">
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.turma.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Carga H. Teórica *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="ch_teorica" placeholder="Carga H. Teórica" name="ch_teorica" class="form-control" ng-model="disciplina.chTeorica" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.chTeorica.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Carga H. Pratica *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="ch_pratica" placeholder="Carga H Pratica" name="ch_pratica" class="form-control" ng-model="disciplina.chPratica" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.chPratica.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Carga H. Total *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="ch_total" placeholder="Carga H Total" name="ch_total" class="form-control" ng-model="disciplina.chtotal" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.chtotal.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Periodo *</label>
+	                <div class="input-group">               
+	                    <input type="text" id="periodo" placeholder="Periodo" name="periodo" class="form-control" ng-model="disciplina.periodo" ng-required="true" maxlength="3"/>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.periodo.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-3">
+	            <div class="form-group">
+	                <label>Tem Fila? *</label>
+	                <div class="input-group">               
+	                    <!--<input type="text" id="fila" placeholder="Tem Fila?" name="fila" class="form-control" ng-model="disciplina.fila" ng-required="true" maxlength="5"/>-->
+						<select class="form-control" id="fila" name="fila" ng-model="disciplina.fila" ng-required="true">
+						    <option value=""></option>
+						    <option value="true">Sim</option>
+						    <option value="false">Não</option>
+						</select> 
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.fila.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>

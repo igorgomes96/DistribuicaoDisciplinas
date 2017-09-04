@@ -1,0 +1,84 @@
+<div class="modal-header bg-modal">
+	<h3 style="margin: 0;">{{title}}</h3>
+</div>
+<div class="modal-body">
+	<form role="form" name="form" validate-form=""  novalidate="">
+		<div class="row">
+			<div class="col-md-12">
+	            <div class="form-group">
+	                <label>Professor *</label>
+	                <div class="input-group">   
+    					<input
+    						type="text"
+    						ng-model="professor"
+    						ng-required="true"
+    						name="siape"
+    						typeahead="professor as (professor.siape+' - '+professor.nome) for professor in professores | filter:{nome:$viewValue} | limitTo:8"
+    						typeahead-editable="false"
+    						autocomplete="off"
+    						typeahead-select-on-exact="true"
+    						typeahead-on-select="onSelectProfessor($item)"
+    						class="form-control">
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.siape.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Dia *</label>
+	                <div class="input-group">
+	                	<select ng-model="restricao.dia" ng-required="true" name="dia" class="form-control">
+	                		<option value="">Selecione uma opção</option>
+	                		<option value="1">Domingo</option>
+	                		<option value="2">Segunda-feira</option>
+	                		<option value="3">Terça-feira</option>
+	                		<option value="4">Quarta-feira</option>
+	                		<option value="5">Quinta-feira</option>
+	                		<option value="6">Sexta-feira</option>
+	                		<option value="7">Sábado </option>
+	                	</select>
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.dia.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>  
+	        </div>
+	        <div class="col-md-6">
+	            <div class="form-group">
+	                <label>Horário *</label>
+	                <div class="input-group">
+	                	<select ng-model="restricao.letra" ng-required="true" name="letra" class="form-control">
+	                		<option value="">Selecione uma opção</option>
+	                		<option value="a">07:10:00 - 08:00:00</option>
+							<option value="b">08:00:00 - 08:50:00</option>
+							<option value="c">08:50:00 - 09:40:00</option>
+							<option value="d">09:50:00 - 10:40:00</option>
+							<option value="e">10:40:00 - 11:30:00</option>
+							<option value="f">11:30:00 - 12:20:00</option>
+							<option value="g">13:10:00 - 14:00:00</option>
+							<option value="h">14:00:00 - 14:50:00</option>
+							<option value="i">14:50:00 - 15:40:00</option>
+							<option value="j">16:00:00 - 16:50:00</option>
+							<option value="k">16:50:00 - 17:40:00</option>
+							<option value="l">17:40:00 - 18:30:00</option>
+							<option value="m">18:10:00 - 19:00:00</option>
+							<option value="n">19:00:00 - 19:50:00</option>
+							<option value="o">19:50:00 - 20:40:00</option>
+							<option value="p">20:50:00 - 21:40:00</option>
+							<option value="q">21:40:00 - 22:30:00</option>
+	                	</select> 
+	                    <span class="input-group-addon">
+	                        <span class="fa" ng-class="(form.letra.$invalid ? 'fa-asterisk text-danger' : 'fa-check text-success')"></span>
+	                    </span>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-success" ng-disabled="form.$invalid" ng-click="sim()">Salvar</button>
+	<button class="btn btn-danger" ng-click="nao()">Cancelar</button>
+</div>
