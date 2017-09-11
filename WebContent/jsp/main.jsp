@@ -6,8 +6,8 @@
 
 		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
 		<script src="../js/lib/jquery.min.js"></script>
-			<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
-			<script src="../js/lib/jquery-ui.min.js"></script>
+		<!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> -->
+		<script src="../js/lib/jquery-ui.min.js"></script>
 		<script src="../js/lib/angular.min.js"></script>
 		<script src="../js/lib/ui-bootstrap-tpls-0.13.4.min.js"></script>
 		<script src="../js/lib/js-custom-select/customSelect.js"></script>
@@ -17,6 +17,7 @@
 		<script src="../js/lib/angular-route.min.js"></script>
 		<script src="../js/lib/ngStorage.js"></script>
 		<script src="../js/controller/main.js"></script>
+		<script src="../js/controller/distribuicaoCtrl.js"></script>
 
 		<!-- Bootstrap core CSS -->
 		<link href="../css/lib/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -542,6 +543,13 @@
 					  	</table>
 					</div>
 				</accordion-group>
+
+				<accordion-group heading="Distribuição das Disciplinas" is-open="false">
+					<div class="col-md-12" style="padding: 0;" ng-controller="distribuicaoCtrl as ct">
+						<button class="btn btn-success">Realizar Distribuição</button>					
+					</div>
+				</accordion-group>
+
 		  	</accordion>
 		
 			<hr>

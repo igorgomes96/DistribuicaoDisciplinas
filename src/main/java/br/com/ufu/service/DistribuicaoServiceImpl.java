@@ -21,6 +21,7 @@ import br.com.ufu.model.Ministra;
 import br.com.ufu.model.Professor;
 import br.com.ufu.model.Turma;
 import br.com.ufu.repository.DisciplinaRepositoryImpl;
+import br.com.ufu.repository.MinistraRepositoryImpl;
 import br.com.ufu.repository.ProfessorRepositoryImpl;
 import br.com.ufu.repository.TurmaRepositoryImpl;
 
@@ -128,7 +129,7 @@ public class DistribuicaoServiceImpl implements Runnable, Serializable {
 	
 	@Override
 	public void run() {
-
+				
 		while ((!turmas.isEmpty() || !professores.isEmpty()) && !insoluvel) { //Enquanto houverem turmas e professores
 
 			boolean deadlock = true;	//Começa o loop supondo que existe um deadlock
@@ -230,14 +231,6 @@ public class DistribuicaoServiceImpl implements Runnable, Serializable {
 			}
 
 		}
-
-		/*if (tr != null && tr.isAlive()) {
-			try {
-				tr.join();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}*/
 
 	}
 	

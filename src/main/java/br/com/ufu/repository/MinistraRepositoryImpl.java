@@ -62,4 +62,12 @@ public class MinistraRepositoryImpl implements MinistraAdminServiceImpl{
 			 throw new Exception("Preencha todos os campos obrigatórios.");
 		}
 	}
+	
+	public void deleteAll() {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.createQuery("delete from ministra");
+		tx.commit();
+		session.close();
+	}
 }
