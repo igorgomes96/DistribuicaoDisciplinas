@@ -231,6 +231,8 @@ public class DistribuicaoServiceImpl implements Runnable, Serializable {
 			}
 
 		}
+		
+		
 
 	}
 	

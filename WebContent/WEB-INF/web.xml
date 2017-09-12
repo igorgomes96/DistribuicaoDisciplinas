@@ -216,6 +216,7 @@
 	        br.com.ufu.service.RestricaoServiceImpl,
 	        br.com.ufu.service.RltProfessorServiceImpl,
 	        br.com.ufu.service.SemestreServiceImpl,
+	        br.com.ufu.repository.CenarioRepositoryImpl,
 	        br.com.ufu.repository.CursoRepositoryImpl,
 	        br.com.ufu.repository.DisciplinaRepositoryImpl,
 	        br.com.ufu.repository.EtapaRepositoryImpl,

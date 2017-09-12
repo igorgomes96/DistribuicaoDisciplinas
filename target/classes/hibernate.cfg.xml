@@ -44,6 +44,7 @@
         <mapping class="br.com.ufu.model.Etapa"/>
 		<mapping class="br.com.ufu.model.Restricao"/>
         <mapping class="br.com.ufu.model.FilaTurmaNew"/>
+        <mapping class="br.com.ufu.model.Cenario"/>
         
     </session-factory>
 </hibernate-configuration>

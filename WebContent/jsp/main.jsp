@@ -546,7 +546,10 @@
 
 				<accordion-group heading="Distribuição das Disciplinas" is-open="false">
 					<div class="col-md-12" style="padding: 0;" ng-controller="distribuicaoCtrl as ct">
-						<button class="btn btn-success">Realizar Distribuição</button>					
+						
+						<select class="form-control" ng-model="ct.cenarioAtual" ng-options=""></select>
+					
+						<button class="btn btn-success">Gerar Cenários</button>					
 					</div>
 				</accordion-group>
 
