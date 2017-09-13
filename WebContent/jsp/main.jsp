@@ -18,6 +18,7 @@
 		<script src="../js/lib/ngStorage.js"></script>
 		<script src="../js/controller/main.js"></script>
 		<script src="../js/controller/distribuicaoCtrl.js"></script>
+		<script src="../js/APIs/cenarioAPI.js"></script>
 
 		<!-- Bootstrap core CSS -->
 		<link href="../css/lib/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -547,7 +548,59 @@
 				<accordion-group heading="Distribuição das Disciplinas" is-open="false">
 					<div class="col-md-12" style="padding: 0;" ng-controller="distribuicaoCtrl as ct">
 						
-						<select class="form-control" ng-model="ct.cenarioAtual" ng-options=""></select>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="selectCenario">Cenários</label>
+									<select class="form-control" id="selectCenario" name="selectCenario" ng-model="ct.cenarioAtual" ng-change="ct.loadCenario(ct.semestreAtual.id, ct.cenarioAtual)" ng-options="('Cenario ' + c) for c in ct.numsCenarios"></select>
+								</div>	
+							</div>
+						</div>
+
+						<div class="row" ng-hide="ct.distribuicao.length <= 0">
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="inputFiltroDistribuicao">Filtro</label>
+											<input placeholder="Digite uma expressão para filtrar" class="form-control" id="inputFiltroDistribuicao" name="inputFiltroDistribuicao" ng-model="ct.filtroDistribuicao">
+										</div>	
+									</div>
+								</div>
+								<div class="row">
+									
+									<div class="col-md-12">
+										<div class="list-group">
+											<a class="list-group-item" ng-repeat="d in ct.distribuicao | filter:ct.filtroDistribuicao">
+												<h4 class="list-group-item-heading" style="margin-bottom: 10px;">{{d.siapeProfessor}} - {{d.nomeProfessor}}</h4>
+										    	<p class="list-group-item-text">
+										    		<div class="card-turma" ng-repeat="t in d.turma">
+										    			<p style="display:inline;border-radius: 5px;">
+										    				{{t.codigoDisc}} - Turma {{t.turma}}
+										    				<button class="close-card-turma"><i class="fa fa-times"></i></button>
+										    			</p><br>
+										    			<small class="text-muted">Nome da Disciplina Aqui</small>
+										    		</div>
+										    	</p>
+										  	</a>
+										</div>								
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="inputFiltroDisciplinas">Filtro</label>
+											<input placeholder="Digite uma expressão para filtrar" class="form-control" id="inputFiltroDisciplinas" name="inputFiltroDisciplinas" ng-model="ct.filtroDisciplinas">
+										</div>	
+									</div>
+								</div>
+							</div>
+
+						</div>
+
 					
 						<button class="btn btn-success">Gerar Cenários</button>					
 					</div>

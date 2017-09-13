@@ -55,6 +55,8 @@ public class TurmaRepositoryImpl implements TurmaAdminServiceImpl{
 			t.setId((Integer) row[5]);
 			turmas.add(t);
 		}
+		/*List<Turma> turmas = new ArrayList<Turma>();
+		turmas = session.createQuery("from Turma t order by t.disciplina.codigo").list();*/
 		session.close();
 		return turmas;
 	}
@@ -95,6 +97,14 @@ public class TurmaRepositoryImpl implements TurmaAdminServiceImpl{
 			tDTO.setTurma(t);
 			turmas.add(tDTO);
 		}
+		/*List<Turma> turmas = new ArrayList<Turma>();
+		List<TurmaDTO> turmasDTO = new ArrayList<TurmaDTO>();
+		turmas = session.createQuery("from Turma t order by t.disciplina.codigo").list();
+		turmas.stream().forEach(x -> {
+			TurmaDTO t = new TurmaDTO();
+		});
+		session.close();
+		return turmasDTO;*/
 		session.close();
 		return turmas;
 	}

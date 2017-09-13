@@ -235,6 +235,7 @@
 	        br.com.ufu.repository.RltProfessorRepositoryImpl,
 	        br.com.ufu.repository.SemestreRepositoryImpl,
 	        br.com.ufu.repository.TurmaRepositoryImpl,
+	        br.com.ufu.controller.CenarioControllerImpl,
 	        br.com.ufu.controller.CursoControllerImpl,
 	        br.com.ufu.controller.DisciplinaControllerImpl,
 	        br.com.ufu.controller.EtapaControllerImpl,

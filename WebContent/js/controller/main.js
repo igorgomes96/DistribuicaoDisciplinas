@@ -12,7 +12,7 @@ var app = angular.module('mainApp', ['ui.bootstrap', 'ui.sortable', 'AxelSoft', 
 		  requireBase: false
 		});
 	})
-	.controller('MainController', function($scope, $sessionStorage, $http, $location, $routeParams, $anchorScroll, $timeout) {
+	.controller('MainController', function($scope, $sessionStorage, $http, $location, $routeParams, $anchorScroll, $timeout, $rootScope) {
 
 		//console.log($routeParams.siape);
 		
@@ -73,6 +73,7 @@ var app = angular.module('mainApp', ['ui.bootstrap', 'ui.sortable', 'AxelSoft', 
 					$scope.semestres[i].estado = '(Ativo)';
 					//$scope.semestre = '{"id":'+$scope.semestres[i].id+',"ano":'+$scope.semestres[i].ano+',"semestre":'+$scope.semestres[i].semestre+',"status":'+$scope.semestres[i].status+',"estado":"(Ativo)"}';
 					$scope.semestre = $scope.semestres[i];
+					$rootScope.$broadcast('eventoAlteraSemestre', $scope.semestre);
 					$scope.semestreSelecionado = $scope.semestres[i];
 				} else {
 					$scope.semestres[i].estado = '';
@@ -138,6 +139,10 @@ var app = angular.module('mainApp', ['ui.bootstrap', 'ui.sortable', 'AxelSoft', 
 			//var s = angular.fromJson(semestre);
 			//console.log(s);
 			var s = semestre;
+
+			//Notifica a atualização
+			$rootScope.$broadcast('eventoAlteraSemestre', semestre);
+
 			/*
 			 * Atualiza o semestre selecionado na tela
 			 */

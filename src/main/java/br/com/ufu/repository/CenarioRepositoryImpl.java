@@ -31,10 +31,10 @@ public class CenarioRepositoryImpl {
 		}
 	}
 	
-	public List<Cenario> getCenariosByNum(int num) {
+	public List<Cenario> getCenariosByNumBySemestre(int num, int idSemestre) {
 		Session session = sessionFactory.openSession();
 		List<Cenario> lista = new ArrayList<Cenario>();
-		lista = session.createQuery("from Cenario c where c.numCenario=" + num).list();
+		lista = session.createQuery("from Cenario c where c.cenarioPK.numCenario=" + num + " and c.cenarioPK.idSemestre="+idSemestre).list();
 		session.close();
 		return lista;
 	}
@@ -42,7 +42,7 @@ public class CenarioRepositoryImpl {
 	public List<Cenario> getCenariosBySemestre(int idSemestre) {
 		Session session = sessionFactory.openSession();
 		List<Cenario> lista = new ArrayList<Cenario>();
-		lista = session.createQuery("from Cenario c where c.idSemestre=" + idSemestre).list();
+		lista = session.createQuery("from Cenario c where c.cenarioPK.idSemestre=" + idSemestre).list();
 		session.close();
 		return lista;
 	}

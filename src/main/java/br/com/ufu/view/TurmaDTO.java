@@ -3,11 +3,19 @@ package br.com.ufu.view;
 import br.com.ufu.model.Turma;
 
 public class TurmaDTO {
-    
+	
 	private Turma turma;
 	private String nomeDisciplina;
 	private String nomeCurso;
+	private String ch;
 	
+
+	public String getCh() {
+		return ch;
+	}
+	public void setCh(String ch) {
+		this.ch = ch;
+	}
 	public Turma getTurma() {
 		return turma;
 	}

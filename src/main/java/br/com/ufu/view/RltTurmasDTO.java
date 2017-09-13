@@ -10,6 +10,7 @@ public class RltTurmasDTO {
 	private String horario;
 	private String horarioExtenso;
 	
+
 	public String getCodigo() {
 		return codigo;
 	}

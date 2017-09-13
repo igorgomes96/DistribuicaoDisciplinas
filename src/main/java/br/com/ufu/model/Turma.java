@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -34,6 +36,10 @@ public class Turma implements Serializable {
 	
 	@Column(name="codigo_disc")
 	String codigoDisc;
+	
+	/*@ManyToOne
+	@JoinColumn(name="codigo_disc")
+	private Disciplina disciplina;*/
 	
 	@Column(name="turma")
 	String turma;
@@ -69,6 +75,14 @@ public class Turma implements Serializable {
 	public String getTurma() {
 		return turma;
 	}
+
+	/*public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}*/
 
 	public void setTurma(String turma) {
 		this.turma = turma;
